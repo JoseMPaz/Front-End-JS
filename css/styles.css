@@ -1,0 +1,282 @@
+/*Inicio de la Hoja de Estilos*/
+
+/*
+* Pagging: Espacio de Relleno entre el contenido y el borde.
+* pagging: 10px 0px -> 10px arriba y abajo, 0px a los lados derecho e izquierdo
+* margin: Espacio entre el borde y los elementos adyacentes
+* margin: 10px 0px -> 10px arriba y abajo, 0px a los lados derecho e izquierdo
+* box-sizing: border-box -> El tamaño del elemento incluye el padding y el border
+*/
+
+/*
+* SelectorUniversal: 
+* Afecta a todos los elementos del sitio web
+* ->Resetea todos los márgenes y paddings ademas de 
+* establecer el modelo de caja en border-box, decir que se
+* redimensionan los elementos para que se ajusten al tamaño de su contenedor*/
+*       
+{
+    margin: 0px 0px;/**/
+    padding: 0px 0px;/*Sin relleno en todo los lados(Arriba,Abajo,Derecha,Izquierda)*/
+    box-sizing: border-box;/*Se redimensiona el borde de las cajas*/
+}
+
+html
+{
+    font-size: 62.5%;/*Tamaño de fuente base 10px == 1rem (62.5% de 16px)*/
+}
+
+body 
+{
+    font-family: Arial, Helvetica, sans-serif;/*Fuente por defecto*/
+    font-size: 1.6rem;/*Tamaño de fuente 16px*/
+    line-height: 1.5;/*Altura de linea 1.5 veces el tamaño de la fuente*/
+    background-color: yellow;/*Color de fondo amarillo claro*/
+    color: darkblue;/*Color del texto*/
+    display: flex;
+    flex-direction: column;/*Alinear los elementos hijos en columna*/
+    min-height: 100vh;/*Altura minima del body 100% de la altura de la ventana*/
+}
+
+.header,
+.footer
+{
+    background-color: cornflowerblue;
+    color: brown;
+    display: flex;
+    justify-content: space-between;/*Centrar horizontalmente los elementos hijos*/
+    align-items: center;/*Centrar verticalmente los elementos hijos*/
+}
+
+.header__logo
+{
+    font-size: 3.5rem;
+    font-weight: bold;
+    padding: 1rem;
+    margin-left: 2rem;
+}
+
+.footer_descripcion
+{
+    font-size: 2.5rem;
+    font-weight: bold;
+    padding: 1rem;
+    margin-left: 2rem;
+}
+
+.header__logo a
+{
+    color: orangered;
+    text-decoration: none;/*Quitar el subrayado*/
+}
+
+.header nav
+{
+    padding: 1rem;
+    margin-right: 2rem;
+}
+
+.header__nav ul
+{
+    list-style: none;/*Quitar los puntos de la lista*/
+    display: flex;/*Alinear los elementos hijos en fila*/
+    justify-content: center;/*Centrar horizontalmente los elementos hijos*/
+    gap: 2rem;/*Espacio entre los elementos hijos*/
+}
+
+.header__nav li
+{
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.header__nav a
+{
+    color: darkblue;
+    text-decoration: none;/*Quitar el subrayado*/
+    display: inline-block;/*Para que el padding funcione*/
+    padding: 1rem;/*Relleno de 1rem*/
+}
+
+.titulo-principal
+{
+    color:orange;/*Color del texto*/
+    font-size: 5rem;
+    text-align: center;/*Centrar el texto*/
+    margin: 20px 0px;/*Margen de 20px arriba y abajo, 0px a los lados*/
+    font-family: 'Bitcount Single Ink', cursive;/*Fuente de Google Fonts*/
+}   
+
+.footer nav ul
+{
+    list-style: none;/*Quitar los puntos de la lista*/
+    display: flex;/*Alinear los elementos hijos en fila*/
+    justify-content: center;/*Centrar horizontalmente los elementos hijos*/
+    gap: 2rem;/*Espacio entre los elementos hijos*/
+}
+
+form 
+{
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: auto;
+}
+
+.google-maps
+{
+    border: 5px solid green;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/*------- Home --------*/
+
+main 
+{
+    width: 90%;/*Ancho del main 90% del contenedor padre*/
+    flex: 1;/*Para que el main ocupe todo el espacio disponible*/
+    margin: 2rem auto;/*Margen de 2rem arriba y abajo, auto a los lados*/
+    display: flex;/*Para que los elementos hijos se alineen en fila*/   
+    flex-direction: column;/*Alinear los elementos hijos en columna*/
+    align-items: center;
+}
+
+main h1
+{
+    font-size: 4rem;
+    color: darkorange;
+    margin: 2rem 0;
+}
+
+main p
+{
+    font-size: 2rem;
+    text-align: center;/*Centrar el texto*/
+    margin-bottom: 2rem;
+    width: 80%;/*Ancho maximo del parrafo*/
+}
+
+.productos_home
+{
+    width: 100%;/*Ancho del contenedor de productos 100% del contenedor padre*/
+    display: flex;/*Para que los elementos hijos se alineen en fila*/
+    flex-wrap: wrap;/*Para que los elementos hijos se ajusten al contenedor*/
+    gap: 2rem;/*Espacio entre los elementos hijos*/
+    justify-content: center;/*Centrar horizontalmente los elementos hijos*/
+    margin-bottom: 2rem;
+}
+
+.productos_home h2
+{
+    width: 100%;/*Ancho del titulo 100% del contenedor padre*/
+    font-size: 3rem;
+    padding: 1rem;
+    color: red;
+    text-align: center;/*Centrar el texto*/
+    margin-bottom: 1rem;
+}   
+
+.contenedor-tarjetas
+{
+    display: flex;/*Para que los elementos hijos se alineen en fila*/
+    justify-content: center;/*Centrar horizontalmente los elementos hijos*/
+    flex-wrap: wrap;/*Para que los elementos hijos se ajusten al contenedor*/
+    gap: 2rem;/*Espacio entre los elementos hijos*/
+    flex-direction: row;/*Alinear los elementos hijos en fila*/
+}
+
+.tarjeta-producto
+{
+    background-color: green;
+    padding: 1rem;/*Relleno de 1rem*/
+    border-radius: 1rem;
+    width: 30rem;/*Ancho de la tarjeta 30rem*/
+    
+    display: flex;/*Para que los elementos hijos se alineen en fila*/   
+    flex-direction: column;/*Alinear los elementos hijos en columna*/
+    align-items: center;/*Centrar horizontalmente los elementos hijos*/
+    gap: 1rem;/*Espacio entre los elementos hijos*/
+}
+
+.tarjeta-producto img 
+{
+  width: 200px;         /* todas las imágenes tendrán el mismo ancho */
+  height: 200px;        /* todas la misma altura */
+  object-fit: cover;    /* recorta sin deformar */
+  border-radius: 10px;  /* opcional: bordes redondeados */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* opcional: sombra suave */
+}
+
+/* --- Estilo general del formulario --- */
+form {
+  max-width: 600px;
+  margin: 40px auto;
+  background-color: green;
+  padding: 20px 30px;
+  border-radius: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  font-family: "Bitcount Single Ink", sans-serif;
+}
+
+/* --- Fieldset y legend --- */
+fieldset {
+  border: 2px solid #333;
+  border-radius: 10px;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  background-color: green;
+}
+
+legend {
+  padding: 0 10px;
+  font-weight: bold;
+  color: #222;
+}
+
+/* --- Etiquetas y campos del formulario --- */
+label {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  font-size: 1em;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* --- Botón de envío --- */
+#boton-de-envio {
+  display: block;
+  margin: 0 auto;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#boton-de-envio:hover {
+  background-color: #0056b3;
+}
+
