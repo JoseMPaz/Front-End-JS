@@ -1,24 +1,8 @@
-/*Inicio de la Hoja de Estilos*/
-
-/*
-* Pagging: Espacio de Relleno entre el contenido y el borde.
-* pagging: 10px 0px -> 10px arriba y abajo, 0px a los lados derecho e izquierdo
-* margin: Espacio entre el borde y los elementos adyacentes
-* margin: 10px 0px -> 10px arriba y abajo, 0px a los lados derecho e izquierdo
-* box-sizing: border-box -> El tamaño del elemento incluye el padding y el border
-*/
-
-/*
-* SelectorUniversal: 
-* Afecta a todos los elementos del sitio web
-* ->Resetea todos los márgenes y paddings ademas de 
-* establecer el modelo de caja en border-box, decir que se
-* redimensionan los elementos para que se ajusten al tamaño de su contenedor*/
-*       
-{
-    margin: 0px 0px;/**/
-    padding: 0px 0px;/*Sin relleno en todo los lados(Arriba,Abajo,Derecha,Izquierda)*/
-    box-sizing: border-box;/*Se redimensiona el borde de las cajas*/
+/* Selector universal */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 html
@@ -38,7 +22,7 @@ body
     min-height: 100vh;/*Altura minima del body 100% de la altura de la ventana*/
 }
 
-.header,
+.header, 
 .footer
 {
     background-color: cornflowerblue;
@@ -113,16 +97,6 @@ body
     display: flex;/*Alinear los elementos hijos en fila*/
     justify-content: center;/*Centrar horizontalmente los elementos hijos*/
     gap: 2rem;/*Espacio entre los elementos hijos*/
-}
-
-form 
-{
-    background: #ffffff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    margin: auto;
 }
 
 .google-maps
