@@ -284,29 +284,57 @@ textarea:focus {
 /*                 FOOTER RESPONSIVO PARA PANTALLAS PEQUEÑAS                 */
 /* -------------------------------------------------------------------------- */
 
+/* Media query para dispositivos pequeños */
 @media (max-width: 768px) {
+
+  /* FOOTER responsivo */
   .footer {
-    display: flex;             /* Aseguramos que sea flex */
-    flex-direction: column;    /* Elementos en columna en móvil */
-    align-items: center;       /* Centrar horizontalmente */
-    text-align: center;        /* Texto centrado */
-    padding: 2rem 1rem;        /* Padding más generoso */
-    gap: 1rem;                  /* Espacio entre elementos */
+    display: flex;               /* asegurar flex */
+    flex-direction: column;      /* contenido en columna */
+    align-items: center;         /* centrar horizontalmente */
+    text-align: center;           /* texto centrado */
+    padding: 2rem 1rem;           /* más espacio */
+    gap: 1rem;                    /* separación entre elementos */
   }
 
   .footer nav ul {
     display: flex;
-    flex-direction: column;    /* Lista en columna */
+    flex-direction: column;       /* links verticales */
     gap: 1rem;
+    padding: 0;                   /* por si hay padding default */
   }
 
   .footer_descripcion {
-    margin-left: 0;            /* Quitar margen izquierdo que tenías */
-    margin-bottom: 1rem;       /* Separación inferior */
-    font-size: 2rem;           /* Ajuste tamaño si es necesario */
+    margin-left: 0;
+    margin-bottom: 1rem;
+    font-size: 2rem;               /* ajustar tamaño si se ve muy grande */
   }
 
-  .footer nav ul li {
-    font-size: 2.5rem;         /* Ajustar tamaño de links en móvil si querés */
+  .footer nav ul li a {
+    font-size: 2.5rem;              /* tamaño de links en móvil */
+  }
+
+  /* HEADER responsivo */
+  .header {
+    display: flex;
+    flex-direction: column;       /* que el logo y nav queden uno encima del otro */
+    align-items: center;          /* centrar todo */
+    padding: 1rem;                 /* espacio interno */
+    gap: 1rem;                     /* separación entre logo y nav */
+  }
+
+  .header__nav ul {
+    flex-direction: column;       /* menú vertical en móvil */
+    gap: 1rem;                     /* separación entre ítems */
+    padding: 0;
+  }
+
+  .header__logo {
+    margin: 0;                     /* quitar margen lateral que tenías */
+    font-size: 3rem;               /* ajustar si es necesario */
+  }
+
+  .header__nav li {
+    font-size: 2.5rem;              /* que los ítems del menú sean más legibles */
   }
 }
