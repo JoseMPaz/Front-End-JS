@@ -126,7 +126,8 @@ body {
 /* -------------------------------------------------------------------------- */
 
 main {
-  width: 90%;
+  width: 100%;
+  max-width: 1200px;
 
   /* body dijo que sus hijos sean flexibles (header, main y footer) */
   /* al aplicar la propiedad "flex: 1" a un hijo, le decimos que ese 
