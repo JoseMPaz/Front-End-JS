@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header class="header">
+      <p class="header__logo">
+        <a href="../index.html">J.M.Paz Bike Works</a>
+      </p>
+      <audio controls autoplay loop>
+				<source src="./audios/musica_de_fondo.mp3" type="audio/mp3">
+				Tu navegador no soporta elementos de audio.	
+			</audio>
+      <nav class="header__nav">
+        <ul>
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="./contacto.html">Contacto</a></li>
+          <li><a href="./carrito.html" class="carrito-icono">🛒 <span id="contador-carrito">0</span></a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="seccion-contacto">
+        <h1 class="titulo-contacto">Contacto</h1>
+        <form
+          class="form"
+          action="https://formspree.io/f/xkgqbqbw"
+          method="POST"
+        >
+          <div class="campo-form">
+            <label for="email"> Correo:</label>
+            <input id="email" type="email" name="email" />
+          </div>
+
+          <div class="campo-form">
+            <label for="mensaje"> Mensaje:</label>
+            <textarea id="mensaje" name="message"></textarea>
+          </div>
+
+          <!-- Asunto del mail que te llega -->
+          <input type="hidden" name="subject" value="Contacto desde el sitio" />
+
+          <!-- your other form fields go here -->
+          <button type="submit">Send</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Desarrollador: Jose Miguel Paz Portilla</p>
+      <nav>
+        <ul>
+          <li><a href="https://github.com/JoseMPaz" target="_blank">Github 🐱</a></li>
+          <li><a href="mailto:jpaz885@gmail.com">Correo Electrónico 📧</a></li>
+          <li><a href="./documentos/historia_academica.pdf " download target="_blank">Historial Academico 📕</a></li>
+        </ul>
+      </nav>
+    </footer>
+  </body>
+</html>

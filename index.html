@@ -7,160 +7,65 @@
 
 <html lang="es">
 
-<head>
-	<title>J.M.Paz Bike Works</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="Tienda en linea de partes de bicicleta.">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Tienda en linea de partes de bicicleta.">
 	<meta name="keywords" content="bicicletas, repuestos, ciclismo">
 	<meta name="author" content="José Miguel Paz Portilla">
-
-	<!--Enlace a la hoja de estilos en cascada CSS-->
-	<link rel="stylesheet" href="./css/styles.css">
-	<!--Enlace a una fuente de Google Fonts-->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Bitcount+Single+Ink:wght@100..900&display=swap" rel="stylesheet">
-</head>
-
-<body>
-
-	<header class="header">
-		<p class="header__logo">
-			<a href="./index.html">J M Paz Bike Works</a>
-		</p>
-		<audio controls autoplay loop>
-    				<source src="./audios/musica_de_fondo.mp3" type="audio/mp3">
-    				Tu navegador no soporta el elemento de audio.	
-		</audio>
-		<nav class="header__nav">
-			<!--En el nav del header van enlaces a otras paginas-->
-			<ul>
-				<li><a href="./index.html">Inicio</a></li>
-				<li><a href="./paginas_web/formulario.html">Contacto</a></li>
-			</ul>
-		</nav>
-	</header>
+    <!-- link de fuente google fonts -->    
+    <link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+    <!-- link de nuestro css externo -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>J.M.Paz Bike Works</title>
+  </head>
+  
+	<body>
 	
-	<main>
-		<h1 class="titulo-principal">Tienda de Partes de Bicicletas</h1>
-		<p>Ofrecemos productos para que armes tu bicicleta vos mismo.</p>
+    <header class="header">
+      <p class="header__logo">
+        <a href="./index.html">J.M.Paz Bike Works</a>
+      </p>
+      <audio controls autoplay loop>
+				<source src="./audios/musica_de_fondo.mp3" type="audio/mp3">
+				Tu navegador no soporta elementos de audio.	
+			</audio>
+      <nav class="header__nav">
+        <ul>
+          <li><a href="./index.html">Inicio</a></li>
+          <li><a href="./pages/contacto.html">Contacto</a></li>
+          <li><a href="./pages/carrito.html" class="carrito-icono">🛒 <span id="contador-carrito">0</span></a></li>
+        </ul>
+      </nav>
+    </header>
+    
+    <main>
+      <h1 class="titulo-home">Tienda de Partes de Bicicletas</h1>
+      <p class="parrafo-home">Ofrecemos productos para que armes tu bicicleta vos mismo.</p>
 
-		<section class="productos_home">
-			<h2>Piezas de Bicicleta</h2>
-			<div class="contenedor-tarjetas">
-				<article class="tarjeta-producto">
-					<img src="./imagenes/cuadro.jpg" alt="Cuadro">
-					<h3>Cuadro</h3>
-					<p>Precio: $200k</p>
-					<button class="boton">Agregar al Carrito</button>
-				</article>
+      <!-- <br> provisorio, hasta ver margin y padding -->
 
-				<article class="tarjeta-producto">
-					<img src="./imagenes/horquilla.jpeg" alt="Horquilla">
-					<h3>Horquilla</h3>
-					<p>Precio: $20k</p>
-					<button class="boton">Agregar al Carrito</button>
-				</article>
+      <section class="productos-home">
+        <h2>Nuestros Productos</h2>
 
-				<article class="tarjeta-producto">
-					<img src="./imagenes/tija.jpeg" alt="Tija">
-					<h3>Tija</h3>
-					<p>Precio: $10k</p>
-					<button class="boton">Agregar al Carrito</button>
-				</article>
+        <div id="contenedor-tarjetas" class="contenedor-tarjetas">
+        	<!--Se completa desde JS -->
+        </div>
+      </section>
+    </main>
+    
+    <footer class="footer">
+      <p>Desarrollador: Jose Miguel Paz Portilla</p>
+      <nav>
+        <ul>
+          <li><a href="https://github.com/JoseMPaz" target="_blank">Github 🐱</a></li>
+          <li><a href="mailto:jpaz885@gmail.com">Correo Electrónico 📧</a></li>
+          <li><a href="./documentos/historia_academica.pdf " download target="_blank">Historial Academico 📕</a></li>
+        </ul>
+      </nav>
+    </footer>
 
-				<article class="tarjeta-producto">
-					<img src="./imagenes/cubierta.jpeg" alt="Cubierta">
-					<h3>Cubierta</h3>
-					<p>Precio: $35k</p>
-					<button class="boton">Agregar al Carrito</button>
-				</article>
-
-				<article class="tarjeta-producto">
-					<img src="./imagenes/camara.jpeg" alt="Cámara">
-					<h3>Cámara</h3>
-					<p>Precio: $10k</p>
-					<button class="boton">Agregar al Carrito</button>
-				</article>
-
-				<article class="tarjeta-producto">
-					<img src="./imagenes/aro.jpeg" alt="Aro">
-					<h3>Aro</h3>
-					<p>Precio: $45k</p>
-					<button class="boton">Agregar al Carrito</button>
-				</article>
-
-				<article class="tarjeta-producto">
-					<img src="./imagenes/cadena.jpeg" alt="Cadena">
-					<h3>Cadena</h3>
-					<p>Precio: $20k</p>
-					<button class="boton">Agregar al Carrito</button>
-				</article>
-
-				<article class="tarjeta-producto">
-					<img src="./imagenes/piñon.jpeg" alt="Piñón">
-					<h3>Piñón</h3>
-					<p>Precio: $35k</p>
-					<button class="boton">Agregar al Carrito</button>
-				</article>
-
-				<article class="tarjeta-producto">
-					<img src="./imagenes/plato-palanca.jpeg" alt="Plato y Palanca">
-					<h3>Plato y Palanca</h3>
-					<p>Precio: $70k</p>
-					<button class="boton">Agregar al Carrito</button>
-				</article>
-			</div>	
-		</section>
-		
-		<aside>	 
-			<section class="productos_home">
-				<h2>Bicicleta de Montaña</h2>
-				<!--Contenido Tangencial Relacionado a esta pagina web-->
-				<img src="./imagenes/bicicleta_de_montaña.jpeg" alt="Bicicleta de montaña">
-			</section>
-			
-			<section class="productos_home">
-				<h2>Video Tutorial</h2>
-				<video controls poster="./imagenes/vista_previa_tutorial_partes_bicicleta.png" width="350" height="350">
-					<source src="./videos/tutorial_partes_bicicleta.mp4" type="video/mp4">
-					Tu navegador no soporta el elemento de video.
-				</video>
-			</section>
-			
-			
-			<section class="productos_home">
-				<h2>Ubicación de la tienda</h2>
-				<iframe class="google-maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.6722673233717!2d-58.370694426576605!3d-34.63772145929072!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a334b46f8b57e7%3A0xce3866f71eafc93!2sHernandarias%20963%2C%20C1164AAI%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1759433849365!5m2!1ses!2sar" 
-				referrerpolicy="no-referrer-when-downgrade" width="500" height="400"></iframe>
-			</section>
-		</aside>
-	</main>
-
-	<footer class="footer">
-		<p class="footer_descripcion">Desarrollador: Jose Miguel Paz Portilla</p>
-		<nav>
-			<ul>
-				<li>
-					<!--La  etiqueta "a" de "anchor" o "ancla" crea enlaces a otras paginas web, email, documentos-->
-					<!--Enlace absoluto a un sitio web que se abre en una nueva pestaña-->
-					<a href="https://github.com/JoseMPaz" target="_blank">Github 🐱</a>
-				</li>
-
-				<li>
-					<!--Enlace para enviar un e-mail por ejemplo por thunderbird-->
-					<a href="mailto:jpaz885@gmail.com">Correo Electrónico 📧</a>
-				</li>
-
-				<li>
-					<!--Enlace para descargar un documento descargar y ver e una nueva pestaña-->
-					<a href="./documentos/historia_academica.pdf " download target="_blank">Historial Académico 📕</a>
-				</li>
-			</ul>
-		</nav>	
-	</footer>
-	<script src="./js/principal.js"></script>
-</body>
-
+    <!-- Enlazo el js antes del ciere del body -->
+    <script type="module" src="./js/index.js"></script>
+  </body>
 </html>
