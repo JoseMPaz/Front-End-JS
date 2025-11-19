@@ -284,21 +284,29 @@ textarea:focus {
 /*                 FOOTER RESPONSIVO PARA PANTALLAS PEQUEÑAS                 */
 /* -------------------------------------------------------------------------- */
 
-@media (max-width: 600px) {
-    .footer {
-        flex-direction: column;   /* Deja el contenido uno debajo del otro */
-        text-align: center;       /* Centrado de textos */
-        gap: 1rem;                /* Espacio entre los elementos */
-        padding: 1.5rem 1rem;     /* Más aire */
-    }
+@media (max-width: 768px) {
+  .footer {
+    display: flex;             /* Aseguramos que sea flex */
+    flex-direction: column;    /* Elementos en columna en móvil */
+    align-items: center;       /* Centrar horizontalmente */
+    text-align: center;        /* Texto centrado */
+    padding: 2rem 1rem;        /* Padding más generoso */
+    gap: 1rem;                  /* Espacio entre elementos */
+  }
 
-    .footer nav ul {
-        flex-direction: column;   /* Lista vertical */
-        gap: 1rem;                /* Separación de links */
-    }
+  .footer nav ul {
+    display: flex;
+    flex-direction: column;    /* Lista en columna */
+    gap: 1rem;
+  }
 
-    .footer_descripcion {
-        margin-left: 0;           /* Evita que quede hacia un costado */
-        font-size: 2rem;          /* Texto un poco más chico para móvil */
-    }
+  .footer_descripcion {
+    margin-left: 0;            /* Quitar margen izquierdo que tenías */
+    margin-bottom: 1rem;       /* Separación inferior */
+    font-size: 2rem;           /* Ajuste tamaño si es necesario */
+  }
+
+  .footer nav ul li {
+    font-size: 2.5rem;         /* Ajustar tamaño de links en móvil si querés */
+  }
 }
