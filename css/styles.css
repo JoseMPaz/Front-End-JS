@@ -283,41 +283,42 @@ textarea:focus {
 /* -------------------------------------------------------------------------- */
 /*                 FOOTER RESPONSIVO PARA PANTALLAS PEQUEÑAS                 */
 /* -------------------------------------------------------------------------- */
-
 @media (max-width: 768px) {
+  /* HEADER */
   .header {
-    display: flex;               /* asegúrate de que sea flex */
-    flex-direction: column;      /* items en columna */
-    align-items: center;         /* centrar logo, nav, audio */
-    gap: 1rem;                    /* separación entre elementos */
-    padding: 1rem;                /* un poco de padding interno */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
   }
 
   .header__logo {
-    margin: 0;                    /* quitar margen lateral */
-    font-size: 3rem;              /* ajustar tamaño para móvil */
-    text-align: center;           /* centrar el texto del logo */
+    margin: 0;
+    font-size: 3rem;
+    text-align: center;
   }
 
   .header__nav ul {
     display: flex;
-    flex-direction: column;       /* los links del nav en columna */
-    gap: 1rem;                     /* separación entre links */
+    flex-direction: column;
+    gap: 1rem;
     padding: 0;
     margin: 0;
   }
 
   .header__nav li {
-    font-size: 2.5rem;             /* links más grandes para tocar con el dedo */
+    font-size: 2.4rem;
   }
 
   .header__nav a {
-    padding: 0.5rem 1rem;           /* más espacio clicable */
+    padding: 0.5rem 1rem;
+    display: block;
   }
 
-  /* Ajustar el audio (o eliminar si no es necesario en móvil) */
+  /* AUDIO (si lo querés mostrar en móvil) */
   .header audio {
-    width: 100%;                    /* que ocupe todo el ancho */
-    margin-top: 0.5rem;             /* separación superior */
+    width: 100%;
+    margin-top: 0.5rem;
   }
 }
