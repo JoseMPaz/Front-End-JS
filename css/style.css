@@ -200,8 +200,9 @@ main .parrafo-home {
 
 .tarjeta-producto img {
   width: 100%;
+  height: 20rem;    /* altura fija */
   border-radius: 0.5rem;
-  object-fit: cover;
+  object-fit: cover; /* recorta pero mantiene proporción */
 }
 
 /* -------------------------------------------------------------------------- */
