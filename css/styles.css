@@ -13,9 +13,9 @@ html
 body 
 {
     font-family: Arial, Helvetica, sans-serif;/*Fuente por defecto*/
-    font-size: 1.6rem;/*Tamaño de fuente 16px*/
     line-height: 1.5;/*Altura de linea 1.5 veces el tamaño de la fuente*/
-    background-color: yellow;/*Color de fondo amarillo claro*/
+    font-size: 1.6rem;/*Tamaño de fuente 16px*/
+    background: yellow;/*Color de fondo amarillo claro*/
     color: darkblue;/*Color del texto*/
     display: flex;
     flex-direction: column;/*Alinear los elementos hijos en columna*/
@@ -110,19 +110,30 @@ body
 
 main 
 {
-    width: 90%;/*Ancho del main 90% del contenedor padre*/
+    width: 80%;/*Ancho del main 80% del contenedor padre*/
+    margin: auto;/*Margen auto en los lados*/
+    padding-bottom: 2rem;
+    
     flex: 1;/*Para que el main ocupe todo el espacio disponible*/
-    margin: 2rem auto;/*Margen de 2rem arriba y abajo, auto a los lados*/
     display: flex;/*Para que los elementos hijos se alineen en fila*/   
     flex-direction: column;/*Alinear los elementos hijos en columna*/
     align-items: center;
 }
 
-main h1
+h1
 {
-    font-size: 4rem;
-    color: darkorange;
-    margin: 2rem 0;
+	color: darkorange;
+    font-size: 3rem;
+    font-weight: 800;
+    font-height: 1.15;
+}
+
+h2
+{
+	color: red;
+    font-size: 2.4rem;
+    font-weight: 700;
+    font-height: 1.20;
 }
 
 main p
@@ -131,6 +142,20 @@ main p
     text-align: center;/*Centrar el texto*/
     margin-bottom: 2rem;
     width: 80%;/*Ancho maximo del parrafo*/
+}
+
+.boton
+{
+	display: block;
+  	margin: 0 auto;
+ 	 background-color: #007bff;
+  	color: white;
+  	border: none;
+ 	 border-radius: 8px;
+ 	 padding: 10px 20px;
+ 	 font-size: 1em;
+ 	 cursor: pointer;
+ 	 transition: background-color 0.3s ease;
 }
 
 .productos_home
@@ -254,3 +279,26 @@ textarea:focus {
   background-color: #0056b3;
 }
 
+
+/* -------------------------------------------------------------------------- */
+/*                 FOOTER RESPONSIVO PARA PANTALLAS PEQUEÑAS                 */
+/* -------------------------------------------------------------------------- */
+
+@media (max-width: 600px) {
+    .footer {
+        flex-direction: column;   /* Deja el contenido uno debajo del otro */
+        text-align: center;       /* Centrado de textos */
+        gap: 1rem;                /* Espacio entre los elementos */
+        padding: 1.5rem 1rem;     /* Más aire */
+    }
+
+    .footer nav ul {
+        flex-direction: column;   /* Lista vertical */
+        gap: 1rem;                /* Separación de links */
+    }
+
+    .footer_descripcion {
+        margin-left: 0;           /* Evita que quede hacia un costado */
+        font-size: 2rem;          /* Texto un poco más chico para móvil */
+    }
+}
