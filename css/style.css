@@ -375,7 +375,6 @@ main .parrafo-home {
   width: 100%;
   height: 30rem;    /* altura fija */
   border-radius: 0.5rem;
-  object-fit: cover; /* recorta pero mantiene proporción */
 }
 
 .video {
