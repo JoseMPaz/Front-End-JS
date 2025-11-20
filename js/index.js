@@ -5,11 +5,11 @@ import { actualizarContador } from "./ui.js";
 document.addEventListener("DOMContentLoaded", () => {
   // --- AUDIO DE FONDO CON PANEL DE CONTROL ---
   const audio = document.createElement("audio");
-  audio.src = "./audios/musica_de_fondo.mp3";
+  audio.src = "audios/musica_fondo.mp3";
   audio.loop = true;
   audio.autoplay = true;
   audio.volume = 0.8;
-  audio.muted = true; // autoplay permitido por navegadores
+  audio.muted = false; // autoplay permitido por navegadores
   document.body.appendChild(audio);
 
   // Panel de control
