@@ -90,6 +90,15 @@ body {
   gap: 2rem; /* 20px */
 }
 
+.footer a {
+  color: rgb(255, 255, 0); /* Amarillo */
+  text-decoration: none;    /* opcional: quita subrayado */
+}
+
+.footer a:hover {
+  color: rgb(255, 215, 0); /* Amarillo más intenso al pasar el mouse */
+}
+
 /* -------------------------------------------------------------------------- */
 /*                              👉Nuevo: BOTONES                              */
 /* -------------------------------------------------------------------------- */
@@ -318,5 +327,6 @@ main .parrafo-home {
     min-width: 400px;
   }
 }
+
 
 
