@@ -3,30 +3,43 @@ import { eliminarProducto, vaciarCarrito } from "./funcionesCarrito.js";
 import { actualizarContador } from "./ui.js";
 
 const renderizarCarrito = () => {
-  //Leemos cantidad de productos en carrito para mostrar
+  // Leemos cantidad de productos en carrito para mostrar
   const carrito = obtenerCarrito();
   actualizarContador(carrito);
 
-  //Accedemos al nodo donde vamos a mostrar las tarjetas de producto
+  // Nodso donde vamos a mostrar las tarjetas y acciones
   const contenedor = document.getElementById("contenedor-carrito");
-  // Botones de acciones
   const divAcciones = document.getElementById("acciones-carrito");
+  const resumen = document.getElementById("resumen-carrito"); // <--- Total aquí
 
-  //Esta lineas limpian los contenedor antes de renderizar tarjetas y botones
+  // Limpiamos contenedores antes de renderizar
   contenedor.innerHTML = "";
   divAcciones.innerHTML = "";
+  resumen.innerHTML = "";
 
-  //❌Si no hay productos en el carrito mostramos un mensaje
+  // ❌ Si no hay productos
   if (!carrito.length) {
     const mensaje = document.createElement("p");
     mensaje.classList.add("mensaje-carrito-vacio");
     mensaje.textContent = "No hay productos en el carrito";
     contenedor.appendChild(mensaje);
-    return; //⚠️salimos de la funcion para no intentar renderizar productos
+    return;
   }
 
-  //✅Si hay productos en el carrito los renderizamos
-  //💡El forEach nos puede dar el indice del producto en el array
+  // --- NUEVO: calcular total ---
+  let total = 0;
+  carrito.forEach(producto => {
+    total += producto.precio;
+  });
+
+  // Mostrar total en el resumen
+  const divTotal = document.createElement("div");
+  divTotal.id = "total-carrito";
+  divTotal.textContent = `Total: $${total}`;
+  divTotal.classList.add("total-carrito-resumen"); // para CSS
+  resumen.appendChild(divTotal);
+
+  // ✅ Renderizamos los productos
   carrito.forEach((producto, indice) => {
     const tarjeta = document.createElement("article");
     tarjeta.classList.add("tarjeta-producto");
@@ -42,16 +55,10 @@ const renderizarCarrito = () => {
     precio.textContent = `$${producto.precio}`;
 
     const btnEliminar = document.createElement("button");
-    btnEliminar.classList.add("btn");
-    btnEliminar.classList.add("btn-eliminar-carrito");
-
-    //💡Aca nos sirve el indice, para poder pasarselo a la funcion de eliminar
+    btnEliminar.classList.add("btn", "btn-eliminar-carrito");
     btnEliminar.textContent = "Eliminar";
     btnEliminar.addEventListener("click", () => {
       eliminarProducto(indice);
-
-      //⚠️Importante! Volver a renderizar el carrito para actualizar la vista,
-      // ya que sino quedaria con el producto eliminado porque solo borramos del storage
       renderizarCarrito();
     });
 
@@ -63,19 +70,17 @@ const renderizarCarrito = () => {
     contenedor.appendChild(tarjeta);
   });
 
+  // Botón Vaciar carrito
   const btnVaciar = document.createElement("button");
-  btnVaciar.classList.add("btn");
-  btnVaciar.classList.add("btn-vaciar-carrito");
+  btnVaciar.classList.add("btn", "btn-vaciar-carrito");
   btnVaciar.textContent = "Vaciar carrito";
   btnVaciar.addEventListener("click", () => {
     vaciarCarrito();
-
-    //⚠️Importante! Volver a renderizar el carrito para actualizar la vista,
-    // ya que sino quedaria con los productos viejos porque solo borramos del storage
     renderizarCarrito();
   });
 
   divAcciones.appendChild(btnVaciar);
 };
 
+// Ejecutamos cuando el DOM está listo
 document.addEventListener("DOMContentLoaded", renderizarCarrito);
