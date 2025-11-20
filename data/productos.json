@@ -1,0 +1,11 @@
+[
+  { "id": "1", "nombre": "Cuadro",                  "img": "img/cuadro.jpg",                    "precio": 250000 },
+  { "id": "2", "nombre": "Cadena",                  "img": "img/cadena.jpeg",                   "precio": 10000 },
+  { "id": "3", "nombre": "Cubierta",                "img": "img/cubierta.jpeg",                 "precio": 20000 },
+  { "id": "4", "nombre": "Horquilla",               "img": "img/horquilla.jpeg",                "precio": 80000 },
+  { "id": "5", "nombre": "Plato y Palanca",         "img": "img/plato-palanca.jpeg",            "precio": 40000 },
+  { "id": "6", "nombre": "Asiento",                 "img": "img/asiento.jpeg",                  "precio": 20000 },
+  { "id": "7", "nombre": "Descarrilador Delantero", "img": "img/descarrilador_delantero.jpeg",  "precio": 40000 },
+  { "id": "8", "nombre": "Cámara",                  "img": "img/camara.jpeg",                   "precio": 10000 },
+  { "id": "9", "nombre": "Piñon",                   "img": "img/piñon.jpeg",                    "precio": 20000 }
+]

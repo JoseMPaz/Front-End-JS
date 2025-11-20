@@ -205,6 +205,20 @@ main .parrafo-home {
   object-fit: cover; /* recorta pero mantiene proporción */
 }
 
+/* --- Efecto vibrar suave + mini zoom --- */
+.tarjeta-producto img:hover {
+  animation: vibrar-zoom 0.15s infinite linear;
+  transform-origin: center; /* para que el zoom se haga desde el centro */
+}
+
+@keyframes vibrar-zoom {
+  0%   { transform: translate(0, 0) scale(1); }
+  20%  { transform: translate(-1px, 1px) scale(1.02); }
+  40%  { transform: translate(1px, -1px) scale(1.02); }
+  60%  { transform: translate(-1px, 1px) scale(1.02); }
+  80%  { transform: translate(1px, -1px) scale(1.02); }
+  100% { transform: translate(0, 0) scale(1); }
+}
 /* -------------------------------------------------------------------------- */
 /*                                  Contacto                                  */
 /* -------------------------------------------------------------------------- */
