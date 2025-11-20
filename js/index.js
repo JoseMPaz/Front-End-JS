@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
   audio.autoplay = true;
   audio.volume = 0.8;
   audio.muted = false; // autoplay permitido por navegadores
+  audio.controls = true; // <---- esto hace que aparezcan los controles nativos
   document.body.appendChild(audio);
 
   // Panel de control
