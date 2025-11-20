@@ -3,14 +3,64 @@ import { obtenerCarrito } from "./storage.js";
 import { actualizarContador } from "./ui.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-  // --- Contenedor de productos ---
+  // --- AUDIO DE FONDO CON PANEL DE CONTROL ---
+  const audio = document.createElement("audio");
+  audio.src = "./audios/musica_de_fondo.mp3";
+  audio.loop = true;
+  audio.autoplay = true;
+  audio.volume = 0.8;
+  audio.muted = true; // autoplay permitido por navegadores
+  document.body.appendChild(audio);
+
+  // Panel de control
+  const panelAudio = document.createElement("div");
+  panelAudio.id = "panel-audio";
+  panelAudio.style.display = "flex";
+  panelAudio.style.alignItems = "center";
+  panelAudio.style.gap = "1rem";
+  panelAudio.style.marginTop = "1rem";
+
+  // Botón reproducir/pausar
+  const btnPlayPause = document.createElement("button");
+  btnPlayPause.textContent = "▶️";
+  btnPlayPause.classList.add("btn");
+  btnPlayPause.addEventListener("click", () => {
+    if (audio.paused) {
+      audio.play();
+      btnPlayPause.textContent = "⏸️";
+    } else {
+      audio.pause();
+      btnPlayPause.textContent = "▶️";
+    }
+  });
+
+  // Slider de volumen
+  const sliderVolumen = document.createElement("input");
+  sliderVolumen.type = "range";
+  sliderVolumen.min = 0;
+  sliderVolumen.max = 1;
+  sliderVolumen.step = 0.01;
+  sliderVolumen.value = audio.volume;
+  sliderVolumen.addEventListener("input", () => {
+    audio.volume = sliderVolumen.value;
+  });
+
+  // Añadimos panel al header
+  const header = document.querySelector("header");
+  header.appendChild(panelAudio);
+  panelAudio.appendChild(btnPlayPause);
+  panelAudio.appendChild(sliderVolumen);
+
+  audio.play().catch(error => {
+    console.warn("El navegador bloqueó el autoplay del audio:", error);
+  });
+
+  // --- MOSTRAR PRODUCTOS ---
   const contenedor = document.getElementById("contenedor-tarjetas");
 
-  // Pedimos la info de productos en carrito para mostrar el numero si hay productos
   const carrito = obtenerCarrito();
   actualizarContador(carrito);
 
-  // Cargar productos desde JSON
   fetch("./data/productos.json")
     .then(response => {
       if (!response.ok) {
@@ -20,7 +70,6 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .then(productos => {
       productos.forEach(producto => {
-        // Crear tarjeta de producto
         const tarjeta = document.createElement("article");
         tarjeta.classList.add("tarjeta-producto");
 
@@ -37,12 +86,10 @@ document.addEventListener("DOMContentLoaded", () => {
         const boton = document.createElement("button");
         boton.classList.add("btn");
         boton.textContent = "Agregar al carrito";
-
         boton.addEventListener("click", () => {
           agregarAlCarrito(producto);
         });
 
-        // Armar estructura
         tarjeta.appendChild(img);
         tarjeta.appendChild(titulo);
         tarjeta.appendChild(precio);
@@ -51,39 +98,4 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     })
     .catch(error => console.error("Error al cargar los productos:", error));
-
-  // --- Audio de fondo ---
-  const audio = document.createElement("audio");
-  audio.src = "./audios/musica_de_fondo.mp3";
-  audio.loop = true;
-  audio.autoplay = true;
-  audio.volume = 0.5;
-
-  // Agregar audio al header
-  const header = document.querySelector("header");
-  header.appendChild(audio);
-
-  // Intentamos reproducirlo (para navegadores que bloquean autoplay)
-  audio.play().catch(error => {
-    console.warn("El navegador bloqueó el autoplay del audio:", error);
-  });
-
-  // --- Botón de silenciar/reproducir ---
-  const btnAudio = document.createElement("button");
-  btnAudio.id = "btn-audio";
-  btnAudio.textContent = "🔊 Silenciar";
-  btnAudio.classList.add("btn");
-  btnAudio.style.marginLeft = "1rem";
-
-  btnAudio.addEventListener("click", () => {
-    if (audio.muted) {
-      audio.muted = false;
-      btnAudio.textContent = "🔊 Silenciar";
-    } else {
-      audio.muted = true;
-      btnAudio.textContent = "🔈 Reproducir";
-    }
-  });
-
-  header.appendChild(btnAudio);
 });
